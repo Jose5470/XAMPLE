@@ -7,34 +7,43 @@
     <style>
         body {
             background-color: pink;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            text-align: center;
             margin: 0;
+            padding: 0;
         }
-        #rose {
-            display: none;
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 20px;
+        #flowerButton {
+            margin-top: 50px;
+            padding: 15px 30px;
             font-size: 20px;
             cursor: pointer;
+        }
+        .flower {
+            display: none;
+            width: 100px;
+            height: auto;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
     <h1>Happy Valentine's Day!</h1>
     <h2>Flowers for You</h2>
-    <button id="clickButton">Click Here</button>
-    <img id="rose" src="Pink Roses Sticker by Blooming Box.gif" alt="Rose Flower" width="700">
+    <button id="flowerButton">Click Here</button>
+    <div id="flowerContainer"></div>
 
     <script>
-        document.getElementById('clickButton').onclick = function() {
-            document.getElementById('rose').style.display = 'block';
-        };
+        const button = document.getElementById('flowerButton');
+        const container = document.getElementById('flowerContainer');
+
+        button.addEventListener('click', function() {
+            for (let i = 0; i < 5; i++) {
+                const img = document.createElement('img');
+                img.src = ''; // Replace with actual flower image URL
+                img.className = 'flower';
+                container.appendChild(img);
+                img.style.display = 'block';
+            }
+        });
     </script>
 </body>
 </html>
