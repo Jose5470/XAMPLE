@@ -20,17 +20,17 @@
             justify-content: center;
         }
         img {
-            width: 500px;
+            width: 600px;
             margin: 10px;
         }
-        #centerImage {
-            order: 0;
+        #flowerImages img:nth-child(1) {
+            order: 0; /* Center */
         }
-        #rightImage {
-            order: 1;
+        #flowerImages img:nth-child(2) {
+            order: 1; /* Right */
         }
-        #leftImage {
-            order: -1;
+        #flowerImages img:nth-child(3) {
+            order: -1; /* Left */
         }
         #clickButton {
             background-color: white;
@@ -53,9 +53,9 @@
     <h1>Flowers for You</h1>
     <button id="clickButton">Click Here</button>
     <div id="flowerImages">
-        <img id="centerImage" src="Pink Roses Sticker by Blooming Box.gif" alt="Flower 1">
-        <img id="rightImage" src="ROSE44.gif" alt="Flower 2">
-        <img id="leftImage" src="ROSE44.gif" alt="Flower 3">
+        <img src="Pink Roses Sticker by Blooming Box.gif" alt="Flower 1">
+        <img src="ROSE44.gif" alt="Flower 2">
+        <img src="ROSE44.gif" alt="Flower 3">
     </div>
 
     <audio id="backgroundMusic" src="I Wanna Be Yours [nyuo9-OjNNg].mp3" preload="auto"></audio>
@@ -64,6 +64,7 @@
         document.getElementById('clickButton').onclick = function() {
             document.getElementById('flowerImages').style.display = 'flex';
             document.getElementById('backgroundMusic').play();
+            this.style.display = 'none';
         };
     </script>
 </body>
