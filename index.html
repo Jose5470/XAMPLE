@@ -7,43 +7,41 @@
     <style>
         body {
             background-color: pink;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
         }
-        #flowerButton {
-            margin-top: 50px;
-            padding: 15px 30px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .flower {
+        #flowerImages {
             display: none;
-            width: 100px;
-            height: auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        img {
+            width: 500px;
             margin: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Happy Valentine's Day!</h1>
-    <h2>Flowers for You</h2>
-    <button id="flowerButton">Click Here</button>
-    <div id="flowerContainer"></div>
+    <h1>Happy Valentine's Day</h1>
+      <h1>Flowers for You</h1>
+    <button id="clickButton">Click Here</button>
+    <div id="flowerImages">
+        <img src="flower1.jpg" alt="Flower 1">
+        <img src="flower2.jpg" alt="Flower 2">
+        <img src="flower3.jpg" alt="Flower 3">
+        <img src="flower4.jpg" alt="Flower 4">
+        <img src="flower5.jpg" alt="Flower 5">
+        <img src="flower6.jpg" alt="Flower 6">
+    </div>
 
     <script>
-        const button = document.getElementById('flowerButton');
-        const container = document.getElementById('flowerContainer');
-
-        button.addEventListener('click', function() {
-            for (let i = 0; i < 5; i++) {
-                const img = document.createElement('img');
-                img.src = 'Pink Roses Sticker by Blooming Box.gif'; // Replace with actual flower image URL
-                img.className = 'flower';
-                container.appendChild(img);
-                img.style.display = 'block';
-            }
-        });
+        document.getElementById('clickButton').onclick = function() {
+            document.getElementById('flowerImages').style.display = 'flex';
+        };
     </script>
 </body>
 </html>
